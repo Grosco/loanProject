@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 用户模块子应用
+    'apps.users',
 ]
 
 MIDDLEWARE = [
@@ -189,3 +191,9 @@ LOGGING = {
         },
     }
 }
+
+# 配置自定义用户模型
+# 点对描述了Django应用程序的label（必须在您的 INSTALLED_APPS 中），用户模型的Django模型的名称
+# AppConfig.label是应用程序的简称，默认是AppConfig.name的最后一段
+
+AUTH_USER_MODEL = "users.User"
